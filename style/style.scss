@@ -1,0 +1,431 @@
+$main-color: #2D3033;
+$secondary-color: #000;
+$light-beige-color: #E4BE8D;
+$beige-color: #F4BF87;
+$red-color: #F38281;
+$color: #fff;
+$linear-gradient: linear-gradient(360deg, rgba(237, 215, 137, 0.9) 0%, rgba(233, 130, 131, 0.9) 100%);
+
+$font-family: 'Raleway';
+$font-style: normal;
+
+body {
+    margin: 0;
+    padding: 0;
+
+    font-family: $font-family;
+    font-style: $font-style;
+    color: $main-color;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
+
+.header {
+    padding-top: 42px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+
+    .header__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .header__logo {
+        font-size: 30px;
+        font-weight: 700;
+        color: $color;
+    }
+
+    .nav {
+        font-size: 14px;
+        line-height: 16px;
+        text-transform: uppercase;
+    }
+
+    .nav__link {
+        margin: 0 25px;
+        display: inline-block;
+        text-decoration: none;
+        transition: color .2s linear;
+        color: $color;
+        cursor: pointer;
+
+        &:after {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 2px;
+    
+            opacity: 0;
+            background-color: $beige-color;
+            transition: opacity .2s linear;
+        }
+
+        &:hover {
+            color: $beige-color;
+        }
+
+        &:hover:after {
+            opacity: 1;
+        }
+    } // nav__link
+} // header
+
+
+.banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    
+    background-image: url(../images/banner/banner.svg);
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 1024px;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background: $linear-gradient;
+    }
+        
+    .banner__inner {
+        width: 100%;
+        max-width: 900px;
+        margin: 114px auto 0;
+        text-align: center;
+    }
+        
+    .banner__subtitle {
+        font-family: 'Kaushan Script';
+        font-weight: 400;
+        font-size: 64px;
+        line-height: 93px;
+        color: $color;
+    }
+        
+    .banner__title {
+        font-weight: 700;
+        font-size: 144px;
+        line-height: 176px;
+        text-transform: uppercase;
+        color: $color;
+
+        &:after {
+            content: "";
+            display: block;
+            width: 170px;
+            height: 4px;
+            margin: 44px auto 74px;
+            background-color: $color;
+        }
+    } // banner__title  
+    
+    .btn {
+        border: none;
+        padding: 18px 80px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        border: 4px solid $color;
+        color: $color;
+    
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 28px;
+        text-transform: uppercase;
+        background-color: transparent;
+        cursor: pointer;
+
+        &:hover {
+            color: $beige-color;
+            background-color: $color;
+        }
+
+        &:active {
+            color: $beige-color;
+            background-color: $color;
+            border: 4px solid $light-beige-color;
+        }
+    } // btn
+    
+    .banner__slider {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 116px;
+    }
+    
+    .slider__item {
+        width: 270px;
+        position: relative;
+        padding: 20px 0;
+        margin-left: 30px;
+        border-top: 4px solid #F9EFCF;
+        font-size: 24px;
+        line-height: 42px;
+        text-transform: uppercase;
+        color: #F9EFCF;
+
+        .number {
+            margin-left: 0;
+        }
+
+    } // slider__item
+
+    .active {
+        color: $color;
+        border-top: 4px solid $color;
+
+        &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 70px;
+            height: 4px;
+            top: -4px;
+            left: 0;
+            z-index: 1;
+            background-color: $red-color;
+        }
+    } // active
+    
+    .slider__item__num {
+        font-size: 36px;
+        font-weight: 700;
+    }
+    
+} // banner
+
+
+.section {
+    padding: 80px 0 100px;
+
+    .section__header {
+        width: 100%;
+        max-width: 1186px;
+        margin: 0 auto 40px;
+    
+        text-align: center;
+    }
+    
+    .section__subtitle {
+        margin-bottom: 30px;
+
+        font-family: 'Kaushan Script';
+        font-weight: 400;
+        font-size: 30px;
+        line-height: 44px;
+    }
+    
+    .section__title {
+        font-weight: 900;
+        font-size: 36px;
+        line-height: 42px;
+        text-transform: uppercase;
+
+        &:after {
+            content: "";
+            display: block;
+            width: 170px;
+            height: 4px;
+            margin: 30px auto 30px;
+            background-color: $red-color;
+        }
+    } // section__title
+    
+    .section__text {
+        margin-bottom: 60px;
+
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 21px;
+        color: $secondary-color;
+    }
+
+
+    .about-us {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .about-us__item {
+        width: 370px;
+        position: relative;
+        background: #95E1D3;
+
+        &:hover .about-us__img {
+            transform: translate3d(-10px, -10px, 0);
+        }
+
+        &:hover .about-us__img img {
+            opacity: 0.1;
+        }
+
+        &:hover .about-us__text {
+            opacity: 1;
+        }
+    } // about-us__item
+
+    .about-us__img {
+        background: $linear-gradient;
+        transition: transform .2s linear;
+    }
+
+    .about-us__img img {
+        display: block;
+        transition: opacity .1s linear;
+    }
+
+    .about-us__text {
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        z-index: 2;
+        transform: translate3d(0, -50%, 0);
+        transition: opacity .2s linear;
+        opacity: 0;
+
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 28px;
+        text-align: center;
+        text-transform: uppercase;
+        color: $color;
+    } // about__text
+} // section
+
+.statistical-date {
+    background-color: rgba(149, 225, 211, 1);
+
+    .statistics {
+        display: flex;
+    
+        .statistics__item {
+            flex: 1 1 0;
+            padding: 70px 25px;
+            border-left: 1px solid #fff;
+            text-align: center;
+    
+            &:last-child {
+                border-right: 1px solid #fff;
+            }
+        } // statistics__item
+    
+        .statistics__count {
+            margin-bottom: 10px;
+    
+            font-weight: 700;
+            font-size: 64px;
+            line-height: 75px;
+            color: $color;
+        }
+        
+        .statistics__text {
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 28px;
+            color: $color;
+        }    
+    } // statistics
+} // statistical-date
+
+
+
+.services {
+    margin: 80px 0 140px;
+    display: flex;
+
+    .services__item {
+        flex: 1 1 0;
+        padding-left: 90px;
+        padding-right: 20px;
+        position: relative;
+    }
+    
+    .services__icon {
+        position: absolute;
+        left: 0;
+        top: -15px;
+        z-index: 1;
+    }
+    
+    .services__name {
+        margin-bottom: 30px;
+
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 28px;
+        text-transform: uppercase;
+    }
+    
+    .services__about {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 21px;
+    }
+} // services 
+
+.services__2 {
+    display: flex;
+
+    .services__item {
+        flex: 1 1 0;
+        padding-left: 90px;
+        padding-right: 20px;
+        position: relative;
+    }
+    
+    .services__icon {
+        position: absolute;
+        left: 0;
+        top: -15px;
+        z-index: 1;
+    }
+    
+    .services__name {
+        margin-bottom: 30px;
+
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 28px;
+        text-transform: uppercase;
+    }
+    
+    .services__about {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 21px;
+    }
+} // services__2
+
+
+
