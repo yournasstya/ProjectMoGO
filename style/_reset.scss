@@ -1,0 +1,21 @@
+$main-color: #2D3033;
+$secondary-color: #000;
+$light-beige-color: #E4BE8D;
+$beige-color: #F4BF87;
+$red-color: #F38281;
+$color: #fff;
+$linear-gradient: linear-gradient(360deg, rgba(237, 215, 137, 0.9) 0%, rgba(233, 130, 131, 0.9) 100%);
+
+$font-family: 'Raleway';
+$font-style: normal;
+
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
