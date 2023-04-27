@@ -1274,7 +1274,7 @@ body {
     line-height: 16px;
   }
   .section .about-us__item {
-    width: 317px;
+    width: 315px;
   }
   .section .about-us__item:hover .about-us__img {
     transform: translate3d(-10px, -10px, 0);
@@ -1571,11 +1571,12 @@ body {
     width: 100%;
   }
 }
-@media only screen and (max-device-width: 320px) {
+@media only screen and (max-device-width: 730px) {
   .header {
     padding: 20px;
   }
   .header .header__inner .header__logo {
+    margin-top: 6px;
     font-size: 19px;
   }
   .header .header__inner .nav {
@@ -1679,14 +1680,18 @@ body {
     background: none;
     margin: 0 auto 16px;
   }
-  .section .about-us__item:hover .about-us__img {
-    display: none;
+  .section .about-us__item .about-us__img {
+    position: relative;
   }
-  .section .about-us__item:hover .about-us__text {
-    display: none;
-  }
-  .section .about-us__item:hover .about-us__icon {
-    display: none;
+  .section .about-us__item .about-us__img::after {
+    content: "";
+    position: absolute;
+    top: 68%;
+    left: 0;
+    width: 282.422px;
+    height: 83px;
+    background: linear-gradient(360deg, rgba(237, 215, 137, 0.9) 0%, rgba(233, 130, 131, 0.9) 100%);
+    z-index: 2;
   }
   .section .about-us__img {
     background: none;
@@ -1696,8 +1701,37 @@ body {
     max-width: 288px;
     height: 258px;
   }
+  .section .about-us__icon {
+    width: 100%;
+    position: absolute;
+    top: 85%;
+    left: -105px;
+    z-index: 2;
+    transform: translate3d(0, -50%, 0);
+    transition: opacity 0.2s linear;
+    opacity: 1;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+  }
   .section .about-us__text {
-    display: none;
+    width: 100%;
+    position: absolute;
+    top: 85%;
+    left: 0;
+    z-index: 2;
+    transform: translate3d(0, -50%, 0);
+    transition: opacity 0.2s linear;
+    opacity: 1;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
   }
   .statistical-date .statistics {
     justify-content: center;

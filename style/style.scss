@@ -121,8 +121,8 @@ body {
             &:after {
                 bottom: -8px;
             }
-        }
-    }
+        } // burger-menu__item
+    } // nav__burger-menu
 
 } // header
 
@@ -385,8 +385,9 @@ body {
         text-align: center;
         text-transform: uppercase;
         color: $color;
+    }    
 } // section
-} // section
+
 
 .statistical-date {
     background-color: rgba(149, 225, 211, 1);
@@ -1547,7 +1548,7 @@ body {
         } // section__header
     
         .about-us__item {
-            width: 317px;
+            width: 315px;
             
     
             &:hover .about-us__img {
@@ -1988,13 +1989,14 @@ body {
 
 
 
-@media only screen and (max-device-width: 320px) {
+@media only screen and (max-device-width: 730px) {
 
     .header {
         padding: 20px;
-        
+
         .header__inner {
             .header__logo {
+                margin-top: 6px;
                 font-size: 19px;
             }
             .nav {
@@ -2132,17 +2134,20 @@ body {
             flex-wrap: wrap;
             background: none;
             margin: 0 auto 16px;
-    
-            &:hover .about-us__img {
-                display: none;
-            }
-    
-            &:hover .about-us__text {
-                display: none;
-            }
-    
-            &:hover .about-us__icon {
-                display: none;
+
+            .about-us__img {
+                position: relative;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 68%;
+                    left: 0;
+                    width: 282.422px;
+                    height: 83px;
+                    background: $linear-gradient;
+                    z-index: 2;
+                }
             }
         } // about-us__item
     
@@ -2156,12 +2161,42 @@ body {
             }
         } // about-us__img
 
+        .about-us__icon {
+            width: 100%;
+            position: absolute;
+            top: 85%; 
+            left: -105px;
+            z-index: 2;
+            transform: translate3d(0, -50%, 0);
+            transition: opacity .2s linear;
+            opacity: 1;
+    
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 28px;
+            text-align: center;
+            text-transform: uppercase;
+            color: $color;
+        }
+
     
         .about-us__text {
-            display: none;
-            //font-size: 18px;
-            //line-height: 21px;
-        } // abou-us__text
+            width: 100%;
+            position: absolute;
+            top: 85%;
+            left: 0;
+            z-index: 2;
+            transform: translate3d(0, -50%, 0);
+            transition: opacity .2s linear;
+            opacity: 1;
+    
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 28px;
+            text-align: center;
+            text-transform: uppercase;
+            color: $color;
+        } 
     } 
 
 
